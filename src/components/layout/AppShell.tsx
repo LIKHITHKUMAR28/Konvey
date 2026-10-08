@@ -120,6 +120,10 @@ export const AppShell: React.FC<AppShellProps> = ({
 
         <main className={styles.contentArea} style={isClient ? { paddingBottom: '48px' } : undefined}>
           {children}
+
+          <footer className={styles.workspaceFooter}>
+            <span>KONVEY Enterprise • Created by <strong className={styles.creatorHighlight}>LIKHITH</strong></span>
+          </footer>
         </main>
       </div>
 

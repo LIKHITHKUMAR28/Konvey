@@ -221,4 +221,4 @@ konvey/
 
 ## 📄 License & Attribution
 
-Designed and engineered for high-velocity teams. © 2026 KONVEY Technologies. All rights reserved.
+Designed and engineered with passion by **LIKHITH**. © 2026 KONVEY. All rights reserved.

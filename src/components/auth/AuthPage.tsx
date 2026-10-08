@@ -411,6 +411,10 @@ export const AuthPage: React.FC<AuthPageProps> = ({ onOpenMetaPage }) => {
               Sitemap
             </button>
           </div>
+
+          <div className={styles.creatorRow}>
+            <span>❤️ Created by <strong className={styles.creatorHighlight}>LIKHITH</strong></span>
+          </div>
         </div>
       </div>
     </div>

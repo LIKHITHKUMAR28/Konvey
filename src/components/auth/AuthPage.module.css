@@ -631,6 +631,23 @@
   text-transform: uppercase;
 }
 
+.creatorRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 12px;
+  font-size: 11.5px;
+  color: #64748b;
+  letter-spacing: 0.01em;
+}
+
+.creatorHighlight {
+  color: #2563eb;
+  font-weight: 750;
+  letter-spacing: 0.03em;
+}
+
 @media (max-width: 900px) {
   .authCardWrapper {
     max-width: 580px;
