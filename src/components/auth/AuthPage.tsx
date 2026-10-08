@@ -391,24 +391,12 @@ export const AuthPage: React.FC<AuthPageProps> = ({ onOpenMetaPage }) => {
           </div>
 
           <div className={styles.metaLinksRow}>
-            <button type="button" className={styles.metaLinkBtn} onClick={() => onOpenMetaPage?.('brand')}>
-              Brand & Favicon
-            </button>
-            <span>•</span>
-            <button type="button" className={styles.metaLinkBtn} onClick={() => onOpenMetaPage?.('security')}>
-              Security Audit
-            </button>
-            <span>•</span>
             <button type="button" className={styles.metaLinkBtn} onClick={() => onOpenMetaPage?.('privacy')}>
               Privacy Policy
             </button>
             <span>•</span>
             <button type="button" className={styles.metaLinkBtn} onClick={() => onOpenMetaPage?.('terms')}>
               Terms
-            </button>
-            <span>•</span>
-            <button type="button" className={styles.metaLinkBtn} onClick={() => onOpenMetaPage?.('sitemap')}>
-              Sitemap
             </button>
           </div>
 
