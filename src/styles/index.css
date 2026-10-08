@@ -1,0 +1,190 @@
+@import './tokens.css';
+
+/* Modern CSS Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--gray-900);
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: var(--gray-900);
+  overflow-x: hidden;
+}
+
+/* Tabular numeric alignment */
+.tabular-nums, table, [data-tabular="true"], .metric-value, .stat-value {
+  font-feature-settings: 'tnum' 1, 'zero' 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Accessibility: Visible, high-contrast keyboard focus indicators (WCAG AA) */
+:focus-visible {
+  outline: 2px solid var(--primary-600);
+  outline-offset: 2px;
+}
+
+/* Modern Typography Hierarchy */
+h1, .display-lg {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.025em;
+  color: var(--gray-950);
+}
+
+h2, .headline-lg {
+  font-size: 22px;
+  font-weight: 650;
+  line-height: 30px;
+  letter-spacing: -0.02em;
+  color: var(--gray-950);
+}
+
+h3, .headline-md {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.015em;
+  color: var(--gray-950);
+}
+
+h4, .headline-sm {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  color: var(--gray-950);
+}
+
+.body-lg, .text-body-large {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--gray-800);
+}
+
+p, .body-md, .text-body {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--gray-700);
+}
+
+.body-sm, .text-small {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--gray-600);
+}
+
+.label-md {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--gray-700);
+}
+
+.label-sm, .text-caption {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+.caption {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--gray-500);
+}
+
+/* Utility Links & Buttons reset */
+a {
+  color: var(--primary-600);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-700);
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+/* Clean Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+}
+
+/* Layout Utilities */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #ffffff;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100vh;
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+
+.app-content {
+  flex: 1;
+  padding: var(--space-6) var(--space-8);
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    padding: var(--space-4);
+  }
+}

@@ -1,0 +1,660 @@
+.floatingTopbarContainer {
+  position: fixed;
+  top: 12px;
+  left: 0;
+  right: 0;
+  z-index: 800;
+  width: calc(100% - 32px);
+  max-width: 1340px;
+  margin: 0 auto;
+  pointer-events: none;
+  animation: topbarFloatIn 350ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes topbarFloatIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.topbar {
+  pointer-events: auto;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 9999px;
+  box-shadow: 
+    0 12px 32px -8px rgba(15, 23, 42, 0.08),
+    0 4px 12px -2px rgba(15, 23, 42, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.topbar:hover {
+  border-color: rgba(203, 213, 225, 0.95);
+  box-shadow: 
+    0 16px 38px -6px rgba(15, 23, 42, 0.1),
+    0 6px 16px -2px rgba(15, 23, 42, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandLogo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform var(--transition-fast);
+}
+
+.brandLogo:hover {
+  transform: translateY(-1px);
+}
+
+.logoFrame {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  flex-shrink: 0;
+}
+
+.brandLogoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  display: block;
+}
+
+.brandName {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.brandSlash {
+  color: #cbd5e1;
+  font-size: 13px;
+  font-weight: 400;
+  user-select: none;
+}
+
+.workspacePill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  font-size: 12.5px;
+  cursor: default;
+}
+
+.orgDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+.orgName {
+  font-weight: 600;
+  color: #334155;
+  font-size: 12px;
+}
+
+/* Center Search */
+.centerSection {
+  flex: 1;
+  max-width: 280px;
+  margin: 0 12px;
+}
+
+.searchBar {
+  width: 100%;
+  height: 32px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 7px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.searchBar:hover {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.searchIcon {
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.searchPlaceholder {
+  font-size: 12px;
+  flex: 1;
+  text-align: left;
+  color: #94a3b8;
+}
+
+.searchKbd kbd {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 1px 5px;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 9999px;
+  color: #64748b;
+}
+
+/* Right Actions */
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subtleActionBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 11px;
+  height: 30px;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.subtleActionBtn:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.focusIndicatorBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background-color: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.focusZap {
+  color: #2563eb;
+}
+
+.iconButton {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.iconButton:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.notifBadge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 3px;
+  border-radius: 9999px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 9.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+.heldIndicator {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #06b6d4;
+  border: 1px solid #ffffff;
+}
+
+/* Persona Pill */
+.personaSwitcher {
+  position: relative;
+}
+
+.personaBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 10px 4px 5px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  color: #334155;
+  user-select: none;
+}
+
+.signOutBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.signOutBtn:hover {
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+  color: #ef4444;
+  transform: translateY(-1px);
+}
+
+.personaAvatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.personaName {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.roleChip {
+  font-size: 10px;
+  color: #64748b;
+  background-color: #e2e8f0;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.personaChevron {
+  color: #94a3b8;
+}
+
+.personaDropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  width: 260px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.09), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  z-index: 1000;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.accountHeaderBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 6px 10px;
+}
+
+.accountAvatarLarge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.accountInfoCol {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.accountFullName {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.accountEmail {
+  font-size: 11px;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdownActionItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.dropdownActionItem:hover {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.dropdownAvatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.dropdownUserInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownName {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dropdownMeta {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.dropdownDivider {
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 3px 0;
+}
+
+.dropdownLogoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 8px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 500;
+  color: #dc2626;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.dropdownLogoutBtn:hover {
+  background-color: #fef2f2;
+}
+
+/* Primary CTA Button */
+.primaryCtaBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 14px;
+  height: 32px;
+  border-radius: 9999px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 2px rgba(37, 99, 235, 0.2);
+  cursor: pointer;
+  transition: all 160ms ease;
+  white-space: nowrap;
+}
+
+.primaryCtaBtn:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+}
+
+.primaryCtaBtn:active {
+  transform: translateY(1px);
+}
+
+/* Drawer */
+.notifDrawerBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.emptyNotifs {
+  padding: 32px 0;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.notifItem {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.notifItem:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+}
+
+.readItem {
+  opacity: 0.6;
+}
+
+.heldItem {
+  border-color: #a5f3fc;
+  background-color: #f0fdfa;
+}
+
+.notifHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notifTime {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.notifTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.notifMessage {
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.4;
+}
+
+.clientPortalBadge {
+  margin-left: 4px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.mobileSearchBtn {
+  display: none;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1100px) {
+  .workspacePill {
+    display: none;
+  }
+  .brandSlash {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .centerSection {
+    display: none;
+  }
+  .mobileSearchBtn {
+    display: flex;
+  }
+  .clientPortalBadge {
+    display: none;
+  }
+  .subtleActionBtn span {
+    display: none;
+  }
+  .subtleActionBtn {
+    padding: 0 8px;
+  }
+  .focusIndicatorBadge span {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .floatingTopbarContainer {
+    width: calc(100% - 16px);
+    top: 8px;
+  }
+  .topbar {
+    height: 48px;
+    padding: 0 10px;
+    gap: 6px;
+  }
+  .subtleActionBtn {
+    display: none;
+  }
+  .primaryCtaBtn {
+    display: none;
+  }
+  .focusIndicatorBadge {
+    display: none;
+  }
+  .personaName {
+    display: none;
+  }
+  .roleChip {
+    font-size: 9px;
+    padding: 1px 4px;
+  }
+}
+
+@media (max-width: 440px) {
+  .topbar {
+    padding: 0 8px;
+  }
+  .logoFrame {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    padding: 2px;
+  }
+  .brandName {
+    font-size: 13px;
+  }
+  .roleChip {
+    display: none;
+  }
+  .personaBtn {
+    padding: 2px;
+  }
+  .personaAvatar {
+    width: 22px;
+    height: 22px;
+  }
+  .signOutBtn {
+    width: 28px;
+    height: 28px;
+  }
+  .iconButton {
+    width: 28px;
+    height: 28px;
+  }
+}

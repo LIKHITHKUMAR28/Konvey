@@ -1,0 +1,395 @@
+.settingsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 1200px;
+}
+
+.settingsHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.categoryLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--intel-600);
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.subtext {
+  font-size: 14px;
+  color: var(--gray-600);
+  margin-top: 4px;
+}
+
+.tabNav {
+  display: flex;
+  gap: var(--space-6);
+  border-bottom: 1px solid var(--gray-200);
+  margin-top: var(--space-2);
+}
+
+.tabBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-600);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tabBtn:hover {
+  color: var(--gray-900);
+}
+
+.tabBtnActive {
+  color: var(--primary-700);
+  border-bottom-color: var(--primary-700);
+  font-weight: 600;
+}
+
+/* =========================================
+   TEAM & ORG TAB
+   ========================================= */
+.orgProfileCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.orgProfileLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.orgLogoBadge {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orgDetails h3 {
+  font-size: 18px;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+}
+
+.orgMeta {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+
+.seatsPill {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background-color: var(--gray-50);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+}
+
+.seatsNumber {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-700);
+}
+
+.seatsLabel {
+  font-size: 12px;
+  color: var(--gray-600);
+}
+
+.membersTableWrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+  background-color: var(--white);
+}
+
+.membersTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.membersTable th {
+  background-color: var(--gray-50);
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.membersTable td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--gray-100);
+  color: var(--gray-800);
+  vertical-align: middle;
+}
+
+.memberUserCol {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.memberAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.memberName {
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.memberEmail {
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+/* =========================================
+   RBAC MATRIX TAB
+   ========================================= */
+.matrixGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.roleCardsRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-4);
+}
+
+.roleCard {
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.roleCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.roleName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.roleDesc {
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 1.45;
+}
+
+.matrixTableWrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+  background-color: var(--white);
+}
+
+.matrixTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.matrixTable th {
+  background-color: var(--gray-50);
+  padding: var(--space-3) var(--space-4);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.matrixTable td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: middle;
+}
+
+.permissionName {
+  font-weight: 500;
+  color: var(--gray-900);
+}
+
+.permissionCategory {
+  font-size: 11px;
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+
+.checkCell {
+  text-align: center;
+}
+
+/* =========================================
+   AUDIT LOG TAB
+   ========================================= */
+.auditLogWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.auditFilters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.auditSearch {
+  width: 320px;
+  max-width: 100%;
+}
+
+.auditList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.auditItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+}
+
+.auditLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.auditActionTag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  text-transform: uppercase;
+  background-color: var(--gray-100);
+  color: var(--gray-700);
+  font-family: var(--font-mono);
+}
+
+.auditMessage {
+  color: var(--gray-900);
+}
+
+.auditMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 11px;
+  color: var(--gray-400);
+}
+
+/* =========================================
+   DATA MANAGEMENT TAB
+   ========================================= */
+.dataCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: var(--space-4);
+}
+
+.dataCard {
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.dataCardIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-50);
+  color: var(--primary-700);
+}
+
+.dataCardDesc {
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+.dangerIcon {
+  background-color: var(--critical-bg);
+  color: var(--critical);
+}
+
+@media (max-width: 768px) {
+  .tabNav {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .orgProfileCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dataCardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .membersTableWrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

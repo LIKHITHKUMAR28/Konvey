@@ -1,0 +1,199 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ==========================================
+    // HELPER FUNCTIONS & MULTI-TENANT BOUNDARIES
+    // ==========================================
+
+    // Verifies the user is authenticated via Firebase Authentication
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Matches the caller's verified UID
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Verifies the user document indicates membership in the target organization
+    function isOrgMember(orgId) {
+      return isSignedIn() && (
+        request.auth.token.orgId == orgId ||
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.organizationIds.hasAny([orgId])
+      );
+    }
+
+    // Verifies the user has an admin role in the target organization
+    function isOrgAdmin(orgId) {
+      return isOrgMember(orgId) && (
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'
+      );
+    }
+
+    // Returns the role of the authenticated caller
+    function getCallerRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+
+    // Verifies the caller is a manager or admin
+    function isOrgManagerOrAdmin(orgId) {
+      return isOrgMember(orgId) && (getCallerRole() == 'manager' || getCallerRole() == 'admin');
+    }
+
+    // ==========================================
+    // 1. ORGANIZATIONS
+    // ==========================================
+    match /organizations/{orgId} {
+      allow read: if isOrgMember(orgId);
+      allow create: if isSignedIn();
+      allow update, delete: if isOrgAdmin(orgId);
+    }
+
+    // ==========================================
+    // 2. USERS (Identity & Profile Records)
+    // ==========================================
+    match /users/{userId} {
+      allow read: if isSignedIn();
+      // Regular user registration must default strictly to 'member'
+      allow create: if isOwner(userId) && request.resource.data.role == 'member';
+      // User can update profile details, but CANNOT self-elevate role or modify organizationIds
+      allow update: if (isOwner(userId) && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['role', 'organizationIds']))
+        || (isSignedIn() && getCallerRole() == 'admin');
+      allow delete: if false;
+    }
+
+    // ==========================================
+    // 3. TEAMS
+    // ==========================================
+    match /teams/{teamId} {
+      allow read: if isSignedIn() && isOrgMember(resource.data.organizationId);
+      allow create: if isSignedIn() && isOrgManagerOrAdmin(request.resource.data.organizationId);
+      allow update, delete: if isSignedIn() && isOrgManagerOrAdmin(resource.data.organizationId);
+    }
+
+    // ==========================================
+    // 4. PROJECTS
+    // ==========================================
+    match /projects/{projectId} {
+      allow read: if isSignedIn() && isOrgMember(resource.data.organizationId);
+      allow create: if isSignedIn() && isOrgManagerOrAdmin(request.resource.data.organizationId);
+      allow update: if isSignedIn() && isOrgManagerOrAdmin(resource.data.organizationId);
+      allow delete: if isSignedIn() && isOrgAdmin(resource.data.organizationId);
+    }
+
+    // ==========================================
+    // 5. TASKS & SUBTASKS
+    // ==========================================
+    match /tasks/{taskId} {
+      allow read: if isSignedIn() && isOrgMember(resource.data.organizationId);
+      // Forbid client role from creating internal developer tasks
+      allow create: if isSignedIn() && isOrgMember(request.resource.data.organizationId)
+        && getCallerRole() != 'client';
+      allow update: if isSignedIn() && isOrgMember(resource.data.organizationId);
+      // Deletions permitted only by Admin, Project Manager, or the assigned owner
+      allow delete: if isSignedIn() && (
+        isOrgManagerOrAdmin(resource.data.organizationId) ||
+        resource.data.assigneeId == request.auth.uid
+      );
+    }
+
+    // ==========================================
+    // 6. DEPENDENCIES
+    // ==========================================
+    match /dependencies/{depId} {
+      allow read: if isSignedIn() && isOrgMember(resource.data.organizationId);
+      allow create: if isSignedIn() && isOrgMember(request.resource.data.organizationId);
+      allow update, delete: if isSignedIn() && isOrgMember(resource.data.organizationId);
+    }
+
+    // ==========================================
+    // 7. COMMENTS
+    // ==========================================
+    match /comments/{commentId} {
+      allow read: if isSignedIn() && isOrgMember(resource.data.organizationId);
+      allow create: if isSignedIn() && isOrgMember(request.resource.data.organizationId);
+      allow update, delete: if isSignedIn() && isOwner(resource.data.authorId);
+    }
+
+    // ==========================================
+    // 8. AUDIT ACTIVITIES
+    // ==========================================
+    match /activities/{actId} {
+      allow read: if isSignedIn() && isOrgMember(resource.data.organizationId);
+      allow create: if isSignedIn() && isOrgMember(request.resource.data.organizationId);
+      allow update, delete: if false; // Append-only audit stream
+    }
+
+    // ==========================================
+    // 9. BLOCKERS
+    // ==========================================
+    match /blockers/{blockerId} {
+      allow read: if isSignedIn() && isOrgMember(resource.data.organizationId);
+      allow create: if isSignedIn() && isOrgMember(request.resource.data.organizationId);
+      allow update, delete: if isSignedIn() && isOrgMember(resource.data.organizationId);
+    }
+
+    // ==========================================
+    // 10. DECISIONS (Decision Memory)
+    // ==========================================
+    match /decisions/{decisionId} {
+      allow read: if isSignedIn() && isOrgMember(resource.data.organizationId);
+      allow create: if isSignedIn() && isOrgMember(request.resource.data.organizationId);
+      allow update, delete: if isSignedIn() && isOrgMember(resource.data.organizationId);
+    }
+
+    // ==========================================
+    // 11. SCOPE EVENTS (Scope Creep Radar)
+    // ==========================================
+    match /scopeEvents/{eventId} {
+      allow read: if isSignedIn() && isOrgMember(resource.data.organizationId);
+      allow create: if isSignedIn() && isOrgMember(request.resource.data.organizationId);
+      allow update, delete: if false; // Immutable baseline events
+    }
+
+    // ==========================================
+    // 12. FOCUS SESSIONS
+    // ==========================================
+    match /focusSessions/{sessionId} {
+      allow read, write: if isSignedIn() && isOwner(resource.data.userId);
+      allow create: if isSignedIn() && isOwner(request.resource.data.userId);
+    }
+
+    // ==========================================
+    // 13. NOTIFICATIONS
+    // ==========================================
+    match /notifications/{notifId} {
+      allow read, update, delete: if isSignedIn() && isOwner(resource.data.recipientId);
+      allow create: if isSignedIn();
+    }
+
+    // ==========================================
+    // 14. PROJECT HEALTH SNAPSHOTS
+    // ==========================================
+    match /projectHealthSnapshots/{snapshotId} {
+      allow read: if isSignedIn() && isOrgMember(resource.data.organizationId);
+      allow create, update: if isSignedIn() && isOrgMember(request.resource.data.organizationId);
+    }
+
+    // ==========================================
+    // 15. CLIENT CHANGE REQUESTS
+    // ==========================================
+    match /clientChangeRequests/{requestId} {
+      allow read: if isSignedIn() && isOrgMember(resource.data.organizationId);
+      allow create: if isSignedIn() && isOrgMember(request.resource.data.organizationId);
+      allow update: if isSignedIn() && isOrgManagerOrAdmin(resource.data.organizationId);
+      allow delete: if isSignedIn() && isOrgAdmin(resource.data.organizationId);
+    }
+
+    // ==========================================
+    // 16. CLIENT DELAY INQUIRIES
+    // ==========================================
+    match /clientDelayInquiries/{inquiryId} {
+      allow read: if isSignedIn() && isOrgMember(resource.data.organizationId);
+      allow create: if isSignedIn() && isOrgMember(request.resource.data.organizationId);
+      allow update: if isSignedIn() && isOrgManagerOrAdmin(resource.data.organizationId);
+      allow delete: if isSignedIn() && isOrgAdmin(resource.data.organizationId);
+    }
+  }
+}

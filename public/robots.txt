@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow internal workspace dynamic state
+Disallow: /api/
+Disallow: /admin/internal/
+
+# Sitemap location
+Sitemap: https://konvey-a357d.web.app/sitemap.xml

@@ -1,0 +1,727 @@
+.directoryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.directoryHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.metaRowHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: 4px;
+}
+
+.sectionCategory {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-600);
+  letter-spacing: 0.08em;
+}
+
+.directorySubtitle {
+  font-size: 14px;
+  color: var(--gray-600);
+  margin-top: 4px;
+  max-width: 600px;
+}
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--gray-200);
+  padding-bottom: var(--space-3);
+}
+
+.filterTabs {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--gray-600);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.filterBtn:hover {
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+}
+
+.filterBtnActive {
+  background-color: var(--white);
+  border-color: var(--gray-300);
+  color: var(--gray-900);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-6);
+}
+
+.projectCard {
+  background-color: #ffffff;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.projectCard:hover {
+  border-color: var(--primary-400);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.cardAtRisk {
+  border-color: #fed7aa;
+}
+
+.cardAtRisk:hover {
+  border-color: #f97316;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.priorityMini {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gray-500);
+  background-color: var(--gray-100);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.04em;
+}
+
+.cardMain {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.cardName {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  line-height: 1.3;
+}
+
+.cardDesc {
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardBlockerNotice {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--critical-bg);
+  color: var(--critical);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: var(--radius-xs);
+}
+
+.cardProgressArea {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.progressRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.progressLabel {
+  color: var(--gray-500);
+}
+
+.progressVal {
+  color: var(--gray-700);
+  font-weight: 600;
+}
+
+.progressTrackMini {
+  width: 100%;
+  height: 4px;
+  background-color: var(--gray-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFillMini {
+  height: 100%;
+  background-color: var(--primary-600);
+  transition: width var(--transition-normal);
+}
+
+.cardFooterBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--gray-100);
+}
+
+.footerOwner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 12px;
+  color: var(--gray-700);
+}
+
+.ownerAvatar {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.footerDate {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+.openProjectHover {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-700);
+  padding-top: var(--space-1);
+}
+
+/* =========================================
+   PROJECT WORKSPACE STYLING
+   ========================================= */
+.workspaceWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.topNavRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  color: var(--gray-600);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.backButton:hover {
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+}
+
+.quickActionGroup {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.projectHeaderCard {
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-6) 0 var(--space-6);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.headerTitleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.titleWithIcon {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.projectIconBadge {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--primary-50);
+  color: var(--primary-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.titleMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: 6px;
+}
+
+.priorityLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gray-500);
+  background-color: var(--gray-100);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+
+.projectName {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gray-900);
+  letter-spacing: -0.01em;
+}
+
+.projectDesc {
+  font-size: 14px;
+  color: var(--gray-600);
+  margin-top: 4px;
+  max-width: 800px;
+  line-height: 1.45;
+}
+
+.metricsStrip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--gray-100);
+  flex-wrap: wrap;
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.metricLabel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.metricValue {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.progressWithBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.progressTrack {
+  width: 120px;
+  height: 6px;
+  background-color: var(--gray-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--primary-600);
+}
+
+.perspectiveTabs {
+  display: flex;
+  gap: var(--space-6);
+  border-bottom: none;
+}
+
+.tabBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-600);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tabBtn:hover {
+  color: var(--gray-900);
+}
+
+.tabBtnActive {
+  color: var(--primary-700);
+  border-bottom-color: var(--primary-700);
+  font-weight: 600;
+}
+
+.activeViewArea {
+  min-height: 400px;
+}
+
+/* =========================================
+   OVERVIEW TAB
+   ========================================= */
+.overviewContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.blockerAlertBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--critical-bg);
+  border: 1px solid var(--critical-border);
+  border-radius: var(--radius-lg);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.alertLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.alertIcon {
+  color: var(--critical);
+  flex-shrink: 0;
+}
+
+.alertHeading {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--critical);
+}
+
+.alertBody {
+  font-size: 13px;
+  color: var(--gray-800);
+  margin-top: 2px;
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.gridColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.cardHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.cardTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.cardMeta {
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+.milestoneList {
+  display: flex;
+  flex-direction: column;
+}
+
+.milestoneRow {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.milestoneIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.milestoneDot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--gray-300);
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dotCompleted {
+  background-color: var(--success);
+  border-color: var(--success);
+}
+
+.milestoneLine {
+  width: 2px;
+  flex: 1;
+  background-color: var(--gray-200);
+  min-height: 36px;
+}
+
+.lineCompleted {
+  background-color: var(--success);
+}
+
+.milestoneContent {
+  flex: 1;
+  padding-bottom: var(--space-4);
+}
+
+.milestoneTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.milestoneTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.titleDone {
+  color: var(--gray-500);
+}
+
+.milestoneDate {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--gray-500);
+  margin-top: 3px;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.memberCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+}
+
+.memberAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.memberInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.memberName {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.memberTitle {
+  font-size: 10px;
+  color: var(--gray-500);
+}
+
+.goalsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.goalItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.goalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.goalTitle {
+  font-weight: 500;
+  color: var(--gray-800);
+}
+
+.goalPercent {
+  font-weight: 700;
+  color: var(--intel-700);
+}
+
+.goalProgressBg {
+  width: 100%;
+  height: 6px;
+  background-color: var(--gray-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.goalProgressBar {
+  height: 100%;
+  background-color: var(--intel-500);
+}
+
+.perspectiveButtons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Create Project Modal */
+.createProjForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.formRowModal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+@media (max-width: 900px) {
+  .overviewGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .topNavRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .quickActionGroup {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .perspectiveTabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .metricsStrip {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .filterBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formRowModal {
+    grid-template-columns: 1fr;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectHeaderCard {
+    padding: 16px 14px 0 14px;
+  }
+
+  .projectName {
+    font-size: 18px;
+  }
+}

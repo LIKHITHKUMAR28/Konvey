@@ -1,0 +1,1400 @@
+.intelContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.intelHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.intelCategory {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--intel-600);
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.intelSubtitle {
+  font-size: 14px;
+  color: var(--gray-600);
+  margin-top: 4px;
+  max-width: 650px;
+}
+
+/* =========================================
+   PROJECT PULSE MODAL
+   ========================================= */
+.pulseModalBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.pulseScoreBanner {
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.pulseBg-on_track { background-color: var(--success-bg); border-color: var(--success-border); }
+.pulseBg-at_risk { background-color: var(--warning-bg); border-color: var(--warning-border); }
+.pulseBg-critical { background-color: var(--critical-bg); border-color: var(--critical-border); }
+.pulseBg-not_started { background-color: var(--gray-100); border-color: var(--gray-300); }
+
+.scoreLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.pulseRing {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 3px solid currentColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.pulseScoreNumber {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--gray-900);
+  line-height: 1;
+}
+
+.pulseScoreMax {
+  font-size: 11px;
+  color: var(--gray-500);
+}
+
+.pulseHealthTagRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: 4px;
+}
+
+.delayTag {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--critical);
+}
+
+.pulseScoreHeading {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.predictedDateText {
+  font-size: 12px;
+  color: var(--gray-700);
+  margin-top: 2px;
+}
+
+.aiExplanationBlock {
+  background-color: var(--intel-50);
+  border: 1px solid var(--intel-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.explainerHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  color: var(--intel-700);
+}
+
+.explainerBody {
+  font-size: 13px;
+  color: var(--gray-800);
+  line-height: 1.5;
+}
+
+.factorsSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.factorsSectionTitle {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gray-400);
+  letter-spacing: 0.06em;
+}
+
+.factorsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.factorCard {
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.factorTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.factorTitleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.factorTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.factorExplanation {
+  font-size: 13px;
+  color: var(--gray-700);
+  line-height: 1.4;
+}
+
+.affectedTasksRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
+
+.affectedLabel {
+  font-size: 11px;
+  color: var(--gray-500);
+  font-weight: 600;
+}
+
+.affectedTaskLink {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary-700);
+  background-color: var(--primary-50);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+}
+
+.factorAction {
+  font-size: 12px;
+  color: var(--gray-600);
+  background-color: var(--gray-50);
+  padding: var(--space-2);
+  border-radius: var(--radius-xs);
+}
+
+.pulseFooterBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.pulseConfidenceText {
+  font-size: 11px;
+  color: var(--gray-500);
+}
+
+.pulseFooterActions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* =========================================
+   BLOCKER RADAR
+   ========================================= */
+.intelStatsRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+.statLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gray-500);
+  text-transform: uppercase;
+}
+
+.statVal { font-size: 24px; font-weight: 700; color: var(--gray-900); margin: 4px 0 2px 0; }
+.statValCritical { font-size: 24px; font-weight: 700; color: var(--critical); margin: 4px 0 2px 0; }
+.statValWarning { font-size: 24px; font-weight: 700; color: var(--warning); margin: 4px 0 2px 0; }
+.statValIntel { font-size: 24px; font-weight: 700; color: var(--intel-700); margin: 4px 0 2px 0; }
+
+.statSub {
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+.blockersListSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sectionHeaderTitle {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gray-400);
+  letter-spacing: 0.06em;
+}
+
+.emptyNotice {
+  background-color: var(--white);
+  border: 1px dashed var(--gray-300);
+  border-radius: var(--radius-md);
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--gray-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-size: 13px;
+}
+
+.blockerDetailCard {
+  background-color: var(--white);
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.blockerCardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.blockerCardTitleGroup {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.iconCritical {
+  color: var(--critical);
+  margin-top: 2px;
+}
+
+.blockerCategoryBadge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--critical);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.blockerTaskName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.blockerDesc {
+  font-size: 13px;
+  color: var(--gray-800);
+  line-height: 1.45;
+}
+
+.blockerMetaGrid {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 12px;
+  color: var(--gray-600);
+  flex-wrap: wrap;
+}
+
+.blockerMetaItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.blockerActionFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.jumpToTaskBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-700);
+  cursor: pointer;
+}
+
+/* =========================================
+   DECISION MEMORY
+   ========================================= */
+.decisionFilterRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.decisionSearchWrapper {
+  flex: 1;
+  max-width: 480px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  color: var(--gray-400);
+}
+
+.decisionSearchInput {
+  width: 100%;
+  height: 36px;
+  padding: 0 var(--space-3) 0 var(--space-8);
+  font-size: 13px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  background-color: var(--white);
+}
+
+.decisionStatusFilter {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.filterTab {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+  color: var(--gray-600);
+  border: 1px solid var(--gray-200);
+  background-color: var(--white);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filterTabActive {
+  background-color: var(--primary-50);
+  border-color: var(--primary-300);
+  color: var(--primary-800);
+  font-weight: 600;
+}
+
+.decisionsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.decisionCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.decisionCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.decisionNumberPill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--intel-700);
+  background-color: var(--intel-50);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+}
+
+.decisionTopRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.supersedeBtn {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  color: var(--gray-600);
+  padding: 2px 6px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xs);
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.supersedeBtn:hover {
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+}
+
+.decisionTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.decisionBox {
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+}
+
+.boxLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gray-500);
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.decisionText {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-900);
+}
+
+.rationaleBox, .alternativesBox {
+  padding: var(--space-2) 0;
+}
+
+.rationaleText {
+  font-size: 13px;
+  color: var(--gray-700);
+  line-height: 1.45;
+}
+
+.alternativesList {
+  margin-left: var(--space-4);
+  font-size: 12px;
+  color: var(--gray-600);
+  line-height: 1.4;
+}
+
+.decisionFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--gray-100);
+  font-size: 11px;
+  color: var(--gray-500);
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.immutableTag {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--success);
+  font-weight: 600;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.supersedeWarning {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background-color: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--warning);
+}
+
+/* =========================================
+   CONTEXT RECOVERY DRAWER
+   ========================================= */
+.contextDrawerBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.welcomeBanner {
+  background-color: var(--intel-50);
+  border: 1px solid var(--intel-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.welcomeTag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--intel-700);
+}
+
+.welcomeBanner h3 {
+  font-size: 18px;
+  color: var(--gray-900);
+}
+
+.welcomeSubtitle {
+  font-size: 13px;
+  color: var(--gray-600);
+}
+
+.recommendationBox {
+  background-color: var(--white);
+  border: 2px solid var(--intel-500);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  box-shadow: var(--shadow-sm);
+}
+
+.recHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--intel-700);
+}
+
+.recTaskTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.recReason {
+  font-size: 13px;
+  color: var(--gray-700);
+  line-height: 1.45;
+}
+
+.recActions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: 4px;
+}
+
+.changesSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.changesStream {
+  display: flex;
+  flex-direction: column;
+}
+
+.changeItem {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.changeIconCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 24px;
+}
+
+.timelineConnectLine {
+  width: 2px;
+  flex: 1;
+  background-color: var(--gray-200);
+  min-height: 28px;
+}
+
+.changeContent {
+  flex: 1;
+  padding-bottom: var(--space-4);
+}
+
+.changeItemTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.changeTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.changeTime {
+  font-size: 11px;
+  color: var(--gray-400);
+}
+
+.changeDesc {
+  font-size: 12px;
+  color: var(--gray-700);
+  line-height: 1.4;
+}
+
+.changeAuthor {
+  font-size: 11px;
+  color: var(--gray-400);
+  margin-top: 2px;
+}
+
+/* =========================================
+   FOCUS MODE VIEW
+   ========================================= */
+.focusContainer {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-6) 0;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.focusHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: var(--space-8);
+}
+
+.focusBrand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.focusTitle {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--intel-600);
+}
+
+.exitFocusBtn {
+  font-size: 12px;
+  color: var(--gray-500);
+  padding: 4px 8px;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+}
+
+.exitFocusBtn:hover {
+  color: var(--gray-900);
+  background-color: var(--gray-100);
+}
+
+.focusSetupCard, .debriefCard {
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.focusSubtitle, .debriefSubtitle {
+  font-size: 14px;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+.setupField {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: var(--space-1);
+}
+
+.setupLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.setupSelect {
+  height: 38px;
+  font-size: 13px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  padding: 0 var(--space-3);
+  background-color: var(--white);
+}
+
+.durationOptions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+}
+
+.durationBtn {
+  padding: 8px 0;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  background-color: var(--white);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.durationBtn:hover {
+  background-color: var(--gray-50);
+}
+
+.durationActive {
+  background-color: var(--intel-50);
+  border-color: var(--intel-500);
+  color: var(--intel-700);
+  font-weight: 600;
+}
+
+.activeFocusSpace {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.timerDisplay {
+  text-align: center;
+}
+
+.timerDigits {
+  font-family: var(--font-mono);
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--gray-900);
+  line-height: 1;
+}
+
+.timerSub {
+  font-size: 13px;
+  color: var(--intel-600);
+  margin-top: 6px;
+}
+
+.focusedTaskCard {
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  width: 100%;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.focusedTaskTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.focusedPriority {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gray-500);
+  background-color: var(--gray-100);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+
+.focusedTaskTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.focusedTaskDesc {
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 1.45;
+}
+
+.focusedChecklist {
+  background-color: var(--gray-50);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.checklistTitle {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gray-500);
+  text-transform: uppercase;
+}
+
+.focusedCheckItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+}
+
+.checkInput {
+  accent-color: var(--intel-600);
+  width: 16px;
+  height: 16px;
+}
+
+.checkDone {
+  text-decoration: line-through;
+  color: var(--gray-400);
+}
+
+.focusedActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.heldCounterBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 12px;
+  color: var(--intel-700);
+  background-color: var(--intel-50);
+  border: 1px solid var(--intel-200);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+}
+
+.debriefStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.debriefStatItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.debriefVal {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.debriefLbl {
+  font-size: 11px;
+  color: var(--gray-500);
+}
+
+.debriefActions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+/* =========================================
+   SCOPE CREEP RADAR
+   ========================================= */
+.scopeComparisonCard {
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.comparisonColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.comparisonLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gray-400);
+  letter-spacing: 0.05em;
+}
+
+.comparisonNum {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--gray-900);
+}
+
+.comparisonSub {
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+.comparisonArrowCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--space-6);
+}
+
+.growthBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  color: var(--warning);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.growthSub {
+  font-size: 11px;
+  color: var(--gray-500);
+  margin-top: 4px;
+}
+
+.scopeSourcesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.sourceBarsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sourceBarItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sourceBarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.sourceName {
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.sourceStats {
+  color: var(--gray-500);
+}
+
+.sourceTrack {
+  width: 100%;
+  height: 6px;
+  background-color: var(--gray-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.sourceFill {
+  height: 100%;
+  border-radius: var(--radius-full);
+}
+
+.dragMetricsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.dragMetricBox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background-color: var(--gray-50);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+}
+
+.dragNum {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.dragDesc {
+  font-size: 12px;
+  color: var(--gray-600);
+  margin-top: 2px;
+}
+
+.scopeEventsTable {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.scopeEventRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px var(--space-3);
+  background-color: var(--gray-50);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-200);
+}
+
+.eventLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.eventTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.eventMeta {
+  font-size: 11px;
+  color: var(--gray-500);
+}
+
+.effortAddedTag {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary-700);
+}
+
+/* =========================================
+   RECOVERY MODE MODAL
+   ========================================= */
+.recoveryModalBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.recoveryDelayBanner {
+  background-color: var(--critical-bg);
+  border: 1px solid var(--critical-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delayStat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.delayLbl {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gray-500);
+  letter-spacing: 0.05em;
+}
+
+.delayVal {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.delayValPredicted {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--critical);
+}
+
+.delayArrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--critical);
+}
+
+.strategySelectionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.optionsSectionTitle {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gray-400);
+  letter-spacing: 0.06em;
+}
+
+.strategyCard {
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all var(--transition-fast);
+}
+
+.strategyCard:hover {
+  border-color: var(--primary-400);
+}
+
+.strategyCardActive {
+  border-color: var(--primary-600);
+  background-color: var(--primary-50);
+  box-shadow: 0 0 0 1px var(--primary-600);
+}
+
+.strategyTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.strategyTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.strategyShortDesc {
+  font-size: 12px;
+  color: var(--gray-600);
+  line-height: 1.35;
+}
+
+.selectedEvaluationPane {
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.evalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.evalHeader h4 {
+  font-size: 14px;
+  color: var(--gray-900);
+}
+
+.evalConfidence {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--intel-700);
+}
+
+.evalBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.evalBlockTitle {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--primary-700);
+  letter-spacing: 0.05em;
+}
+
+.evalBlockTitleTradeOff {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--warning);
+  letter-spacing: 0.05em;
+}
+
+.evalList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+}
+
+.evalItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--gray-800);
+  line-height: 1.4;
+}
+
+.netImpactBanner {
+  background-color: var(--intel-50);
+  border: 1px solid var(--intel-200);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  font-size: 12px;
+  color: var(--intel-700);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: auto;
+}
+
+.recoveryFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.guardrailNotice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--gray-600);
+  max-width: 460px;
+}
+
+.recoveryFooterBtns {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.approvedSuccessState {
+  padding: var(--space-8);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.approvedIcon {
+  margin-bottom: var(--space-2);
+}
+
+.approvedSuccessState h3 {
+  font-size: 20px;
+  color: var(--gray-900);
+}
+
+.approvedSub {
+  font-size: 14px;
+  color: var(--gray-600);
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .strategySelectionGrid, .scopeSourcesGrid {
+    grid-template-columns: 1fr;
+  }
+}

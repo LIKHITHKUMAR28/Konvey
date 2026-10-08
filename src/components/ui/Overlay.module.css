@@ -1,0 +1,125 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: var(--backdrop);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn var(--transition-fast) ease-out;
+}
+
+.modalContent {
+  background-color: #ffffff;
+  border-radius: var(--radius-dialog);
+  border: 1px solid var(--border-default);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 560px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: scaleIn var(--transition-fast) ease-out;
+}
+
+.drawerBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: var(--backdrop);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeIn var(--transition-fast) ease-out;
+}
+
+.drawerContent {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 620px;
+  height: 100vh;
+  border-left: 1px solid var(--border-default);
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideInRight var(--transition-normal) ease-out;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-default);
+  background-color: #ffffff;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 650;
+  color: var(--gray-950);
+  letter-spacing: -0.01em;
+}
+
+.closeButton {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-500);
+  transition: all var(--transition-fast);
+}
+
+.closeButton:hover {
+  background-color: var(--gray-100);
+  color: var(--gray-950);
+}
+
+.body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+  background-color: #ffffff;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-default);
+  background-color: #f8fafc;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,100 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  height: 22px;
+  line-height: 1;
+  white-space: nowrap;
+  gap: var(--space-1);
+  border: 1px solid transparent;
+  padding: 0 8px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.sm {
+  height: 18px;
+  padding: 0 6px;
+  font-size: 10px;
+}
+
+.md {
+  height: 22px;
+  padding: 0 8px;
+  font-size: 11px;
+}
+
+.default {
+  background: rgba(109, 119, 142, 0.12);
+  color: #525b72;
+  border-color: rgba(109, 119, 142, 0.25);
+}
+
+.primary {
+  background: rgba(125, 211, 252, 0.18);
+  color: var(--primary);
+  border-color: rgba(125, 211, 252, 0.4);
+  box-shadow: 0 0 8px rgba(125, 211, 252, 0.15);
+}
+
+.intel {
+  background: rgba(125, 211, 252, 0.2);
+  color: var(--primary);
+  border-color: rgba(125, 211, 252, 0.45);
+  box-shadow: 0 0 10px rgba(125, 211, 252, 0.2);
+}
+
+.success {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--success);
+  border-color: var(--success-border);
+}
+
+.warning {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--warning);
+  border-color: var(--warning-border);
+}
+
+.critical {
+  background: rgba(179, 27, 37, 0.12);
+  color: var(--critical);
+  border-color: var(--critical-border);
+}
+
+.not-started {
+  background: rgba(109, 119, 142, 0.12);
+  color: #6d778e;
+  border-color: rgba(109, 119, 142, 0.22);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.dot-default { background-color: #6d778e; }
+.dot-primary { background-color: var(--ice-blue); }
+.dot-intel { background-color: var(--ice-blue); }
+.dot-success { background-color: var(--success); }
+.dot-warning { background-color: var(--warning); }
+.dot-critical { background-color: var(--critical); }
+.dot-not-started { background-color: #a3adc7; }
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+}
+
+.text {
+  line-height: 1;
+}

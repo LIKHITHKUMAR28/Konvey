@@ -1,0 +1,205 @@
+.myWorkContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.categoryLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--intel-600);
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.subtext {
+  font-size: 14px;
+  color: var(--gray-600);
+  margin-top: 4px;
+}
+
+.actionCluster {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.filterRow {
+  border-bottom: 1px solid var(--gray-200);
+  padding-bottom: var(--space-3);
+}
+
+.tabGroup {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--gray-600);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.tabBtn:hover {
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+}
+
+.tabBtnActive {
+  background-color: var(--white);
+  border-color: var(--gray-300);
+  color: var(--gray-900);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.tasksStream {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.emptyState {
+  background-color: var(--white);
+  border: 1px dashed var(--gray-300);
+  border-radius: var(--radius-lg);
+  padding: var(--space-12) var(--space-6);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.emptyIcon {
+  color: var(--gray-400);
+  margin-bottom: var(--space-2);
+}
+
+.emptyState h4 {
+  font-size: 16px;
+  color: var(--gray-800);
+}
+
+.emptyState p {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+
+.taskItem {
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.taskItem:hover {
+  border-color: var(--primary-400);
+  box-shadow: var(--shadow-md);
+  transform: translateX(2px);
+}
+
+.itemBlocked {
+  border-color: #fecaca;
+  background-color: #fffafa;
+}
+
+.itemBlocked:hover {
+  border-color: #f87171;
+}
+
+.itemLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.checkIcon {
+  color: var(--gray-400);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.blockerIcon {
+  color: var(--critical);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.itemTitleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.taskTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.itemSubRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.projectTag, .dueDateTag, .checklistTag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--gray-500);
+}
+
+.itemRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.priorityBadge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.04em;
+}
+
+.p-low { color: var(--gray-600); background-color: var(--gray-100); }
+.p-medium { color: var(--primary-700); background-color: var(--primary-50); }
+.p-high { color: var(--warning); background-color: var(--warning-bg); }
+.p-urgent { color: var(--critical); background-color: var(--critical-bg); }
+
+.chevron {
+  color: var(--gray-400);
+}

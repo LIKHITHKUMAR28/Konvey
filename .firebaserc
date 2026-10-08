@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "konvey-a357d"
+  },
+  "targets": {
+    "konvey-a357d": {
+      "hosting": {
+        "site": [
+          "konvey-a357d"
+        ]
+      }
+    }
+  }
+}

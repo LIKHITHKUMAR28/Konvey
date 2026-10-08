@@ -1,0 +1,131 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+  gap: var(--space-2);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Sizes */
+.sm {
+  height: 32px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.md {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 13px;
+}
+
+.lg {
+  height: 40px;
+  padding: 0 18px;
+  font-size: 14px;
+}
+
+/* Modern Button Variants */
+.primary {
+  background-color: var(--primary-600);
+  color: var(--white);
+  border: 1px solid transparent;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--primary-700);
+  box-shadow: 0 2px 4px 0 rgba(37, 99, 235, 0.2);
+}
+
+.primary:active:not(:disabled) {
+  background-color: var(--primary-800);
+  transform: translateY(1px);
+}
+
+.secondary {
+  background-color: var(--white);
+  color: var(--gray-900);
+  border: 1px solid var(--border-default);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--gray-50);
+  border-color: var(--border-strong);
+  color: var(--gray-950);
+}
+
+.secondary:active:not(:disabled) {
+  background-color: var(--gray-100);
+  transform: translateY(1px);
+}
+
+.tertiary {
+  background-color: transparent;
+  color: var(--gray-600);
+  border-color: transparent;
+}
+
+.tertiary:hover:not(:disabled) {
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+}
+
+.destructive {
+  background-color: var(--critical);
+  color: var(--white);
+  border: 1px solid transparent;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.destructive:hover:not(:disabled) {
+  background-color: #b91c1c;
+  box-shadow: 0 2px 4px 0 rgba(220, 38, 38, 0.2);
+}
+
+.intel {
+  background-color: var(--primary-50);
+  color: var(--primary-700);
+  border: 1px solid var(--primary-200);
+}
+
+.intel:hover:not(:disabled) {
+  background-color: var(--primary-100);
+  color: var(--primary-800);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

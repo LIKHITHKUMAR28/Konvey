@@ -1,0 +1,730 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(1px);
+  z-index: 1100;
+  animation: fadeIn var(--transition-fast) ease-out;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 680px;
+  background-color: var(--white);
+  box-shadow: -8px 0 32px rgba(15, 23, 42, 0.16);
+  z-index: 1150;
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight var(--transition-normal) ease-out;
+}
+
+.header {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-6);
+  border-bottom: 1px solid var(--gray-200);
+  background-color: var(--white);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.taskIdBadge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary-700);
+  background-color: var(--primary-50);
+  border: 1px solid var(--primary-200);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+
+.headerDot {
+  color: var(--gray-400);
+}
+
+.headerProjectName {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-600);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.headerIconBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-500);
+  transition: all var(--transition-fast);
+}
+
+.headerIconBtn:hover {
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+}
+
+.controlBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.controlGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.controlLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-500);
+  text-transform: uppercase;
+}
+
+.statusSelect {
+  height: 28px;
+  padding: 0 var(--space-3);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-300);
+  background-color: var(--white);
+}
+
+.status-not_started { color: var(--gray-600); border-color: var(--gray-300); }
+.status-in_progress { color: var(--primary-700); border-color: var(--primary-300); background-color: var(--primary-50); }
+.status-blocked { color: var(--critical); border-color: var(--critical-border); background-color: var(--critical-bg); }
+.status-done { color: var(--success); border-color: var(--success-border); background-color: var(--success-bg); }
+
+.controlSelect {
+  height: 28px;
+  padding: 0 var(--space-2);
+  font-size: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-300);
+  background-color: var(--white);
+}
+
+.blockerBanner {
+  background-color: var(--critical-bg);
+  border-bottom: 1px solid var(--critical-border);
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.blockerBannerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blockerTitleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--critical);
+  font-size: 13px;
+}
+
+.blockerIcon {
+  color: var(--critical);
+}
+
+.blockerBannerDesc {
+  font-size: 13px;
+  color: var(--gray-900);
+  line-height: 1.4;
+}
+
+.blockerFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.blockerMeta {
+  font-size: 11px;
+  color: var(--gray-600);
+}
+
+.resolveInlineBtn {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-700);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.titleInput {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray-900);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-2);
+  resize: none;
+  line-height: 1.3;
+  transition: all var(--transition-fast);
+}
+
+.titleInput:focus {
+  border-color: var(--primary-600);
+  background-color: var(--white);
+  box-shadow: 0 0 0 1px var(--primary-600);
+  outline: none;
+}
+
+.metaGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.metaRow {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: center;
+}
+
+.metaKey {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  color: var(--gray-500);
+}
+
+.metaValue {
+  display: flex;
+  align-items: center;
+}
+
+.metaSelect, .metaInput {
+  font-size: 13px;
+  color: var(--gray-800);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 3px 6px;
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+
+.metaSelect:hover, .metaInput:hover {
+  border-color: var(--gray-300);
+  background-color: var(--white);
+}
+
+.metaSelect:focus, .metaInput:focus {
+  border-color: var(--primary-600);
+  background-color: var(--white);
+  outline: none;
+}
+
+.effortBadge {
+  font-size: 12px;
+  color: var(--gray-600);
+  background-color: var(--gray-100);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+}
+
+.labelsList {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.sectionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.sectionTitleText {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.sectionIcon {
+  color: var(--primary-600);
+}
+
+.badgeCount {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gray-500);
+  background-color: var(--gray-100);
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+}
+
+.descTextarea {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--gray-800);
+  line-height: 1.5;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  resize: vertical;
+  transition: all var(--transition-fast);
+}
+
+.descTextarea:focus {
+  border-color: var(--primary-600);
+  box-shadow: 0 0 0 1px var(--primary-600);
+  outline: none;
+}
+
+/* Checklist Styling */
+.progressBarWrapper {
+  width: 100%;
+  height: 4px;
+  background-color: var(--gray-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: var(--success);
+  transition: width var(--transition-normal);
+}
+
+.checklistItems {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.checklistItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) 0;
+}
+
+.checkboxInput {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary-600);
+  cursor: pointer;
+}
+
+.checklistLabel {
+  font-size: 13px;
+  color: var(--gray-800);
+  flex: 1;
+  cursor: pointer;
+}
+
+.itemCompleted {
+  text-decoration: line-through;
+  color: var(--gray-400);
+}
+
+.itemDeleteBtn {
+  color: var(--gray-400);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.checklistItem:hover .itemDeleteBtn {
+  opacity: 1;
+}
+
+.addChecklistForm {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.addChecklistInput {
+  flex: 1;
+  height: 30px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+}
+
+/* Dependencies Styling */
+.addDepForm {
+  padding: var(--space-3);
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.addDepRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.depSelect {
+  height: 32px;
+  font-size: 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  padding: 0 var(--space-2);
+  background-color: var(--white);
+}
+
+.depError {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 12px;
+  color: var(--critical);
+  font-weight: 500;
+}
+
+.depFormActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.depGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.depGroupLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--gray-400);
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+.depItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px var(--space-3);
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.depItem:hover {
+  background-color: var(--white);
+  border-color: var(--primary-300);
+}
+
+.depInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+  cursor: pointer;
+}
+
+.linkIcon {
+  color: var(--gray-400);
+}
+
+.depTitle {
+  font-size: 12px;
+  color: var(--gray-800);
+  font-weight: 500;
+}
+
+.removeDepBtn {
+  color: var(--gray-400);
+  transition: color var(--transition-fast);
+}
+
+.removeDepBtn:hover {
+  color: var(--critical);
+}
+
+.depEmpty {
+  font-size: 12px;
+  color: var(--gray-500);
+  font-style: italic;
+  padding: var(--space-2) 0;
+}
+
+/* Comments & Activity */
+.commentTabs {
+  display: flex;
+  border-bottom: 1px solid var(--gray-200);
+  gap: var(--space-4);
+}
+
+.commentTabBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-500);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.commentTabActive {
+  color: var(--primary-700);
+  border-bottom-color: var(--primary-700);
+  font-weight: 600;
+}
+
+.commentsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.commentsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.commentItem {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.commentAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.commentBubble {
+  flex: 1;
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+}
+
+.commentMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.commentAuthor {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.commentTime {
+  font-size: 11px;
+  color: var(--gray-400);
+}
+
+.commentBody {
+  font-size: 13px;
+  color: var(--gray-800);
+  line-height: 1.4;
+}
+
+.addCommentForm {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+}
+
+.commentAvatarSmall {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.commentInputWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.commentTextarea {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  resize: vertical;
+}
+
+.commentActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.commentHint {
+  font-size: 11px;
+  color: var(--gray-400);
+}
+
+.activityFeed {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.activityItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: 4px 0;
+  font-size: 12px;
+}
+
+.activityDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary-600);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.activityContent {
+  color: var(--gray-700);
+  line-height: 1.4;
+}
+
+.activityActor {
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.activityAction {
+  color: var(--gray-700);
+}
+
+.activityTime {
+  color: var(--gray-400);
+  margin-left: var(--space-2);
+  font-size: 11px;
+}
+
+/* Blocker Modal Form */
+.blockerModalForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.blockerModalNotice {
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 1.4;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.fieldLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.formSelect {
+  height: 34px;
+  padding: 0 var(--space-3);
+  font-size: 13px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  background-color: var(--white);
+}
+
+.formTextarea {
+  padding: var(--space-2) var(--space-3);
+  font-size: 13px;
+  font-family: var(--font-sans);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

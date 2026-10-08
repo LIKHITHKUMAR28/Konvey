@@ -1,0 +1,185 @@
+.teamsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.categoryLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-600);
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--gray-600);
+  margin-top: 4px;
+}
+
+.teamsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: var(--space-6);
+}
+
+.teamCardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.teamTitleRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.teamIconBadge {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.teamName {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.teamDesc {
+  font-size: 13px;
+  color: var(--gray-600);
+  margin-top: 2px;
+}
+
+.statsStrip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--gray-100);
+  margin-bottom: var(--space-4);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statLabel {
+  font-size: 11px;
+  color: var(--gray-500);
+  text-transform: uppercase;
+}
+
+.statValue {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.rosterSection, .projectsSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.rosterTitle {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--gray-400);
+  letter-spacing: 0.06em;
+}
+
+.membersList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.memberRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 6px var(--space-3);
+  background-color: var(--gray-50);
+  border-radius: var(--radius-sm);
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.memberInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.memberNameRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.memberName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.memberRoleTag {
+  font-size: 10px;
+  color: var(--gray-500);
+  text-transform: uppercase;
+}
+
+.memberEmail {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--gray-500);
+}
+
+.projectPills {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.projectPill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px var(--space-3);
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--gray-800);
+}
+
+@media (max-width: 768px) {
+  .teamsGrid {
+    grid-template-columns: 1fr;
+  }
+}

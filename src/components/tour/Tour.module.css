@@ -1,0 +1,132 @@
+.tourModalContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.tourBanner {
+  background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-800) 100%);
+  color: var(--white);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.bannerTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.bannerSub {
+  font-size: 13px;
+  color: var(--primary-200);
+  line-height: 1.45;
+  max-width: 480px;
+}
+
+.tourStepsNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.stepIndicators {
+  display: flex;
+  gap: 6px;
+}
+
+.stepDot {
+  width: 28px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: var(--gray-200);
+  transition: all var(--transition-fast);
+}
+
+.stepDotActive {
+  background-color: var(--primary-600);
+  width: 44px;
+}
+
+.stepCounter {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-500);
+}
+
+.tourCard {
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.cardIconBox {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background-color: var(--primary-50);
+  color: var(--primary-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardHeading {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.cardTag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--intel-600);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cardBody {
+  font-size: 14px;
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+
+.featurePillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.featurePill {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray-700);
+  background-color: var(--gray-100);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.footerActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-2);
+}
